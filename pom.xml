@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.yiwangqingshui.plugins</groupId>
+    <groupId>com.github.yiwangqingshui</groupId>
     <artifactId>mybatis-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
     <name>mybatis-gen-maven-plugin</name>
@@ -32,7 +32,10 @@
     </developers>
 
     <scm>
-        <!--<url>https://gitee.com/bangis/mybatis.generator.git</url>-->
+        <connection>scm:git:https://github.com/yiwangqingshui/mybatis_gen.git</connection>
+        <developerConnection>scm:git:https://github.com/yiwangqingshui/mybatis_gen.git</developerConnection>
+        <url>https://github.com/yiwangqingshui/mybatis_gen</url>
+        <tag>${project.version}</tag>
     </scm>
 
     <distributionManagement>
@@ -197,6 +200,23 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!--maven签名-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
 
