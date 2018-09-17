@@ -32,7 +32,7 @@
 * 执行maven操作
 
   ~~~
-  maven mybatis:gen
+  mvn mybatis:gen
   [INFO] 开始执行maven插件
   ===========输入需要生成的表==============
   -- 多表用 ; (分号分隔)分隔
