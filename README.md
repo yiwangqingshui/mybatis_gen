@@ -78,6 +78,14 @@
 
 秉着一个对大多数约定俗成的需求需要不支持一些数据库表大字段的支持，在日常的使用场景中，数据库本身就不建议存储大字段如：（clob，blob）这些字段的存储，数据库大字段不支持
 
+### 问题解答
+如果在运行的过程中出现
+~~~
+  Failure to find com.oracle:ojdbc6:jar:11.2.0.1.0   则需要自己绑定oraclejar包
+  绑定方式：
+  mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0.1.0 -Dpackaging=jar -  Dfile=G:\app\smc\product\11.2.0\dbhome_1\jdbc\lib\ojdbc6.jar
+ 把本地的oracle jar包放入本地maven仓库中
+~~~
 
 
 ### 结束语
